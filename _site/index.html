@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=c23d3045604e39a8b1c5eee3794fa866937b574c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20f90d924992aa3853d407a6ba95a56b35b64195">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -357,6 +357,13 @@ dtype: object
 
 <h2 id="assessment-of-missingness">Assessment of Missingness</h2>
 <h3 id="nmar-analysis">NMAR Analysis</h3>
+<p>In the NMAR scenario, the reason behind the missing data is related to the missing data itself. In the merged dataframe, the missingness type of the <code class="language-plaintext highlighter-rouge">description</code> column is probably NMAR. For example, users might not include a description for recipes that are simple or well-known because they think it’s self-explanatory, or they might omit descriptions for recipes that are family secrets or unique concoctions they prefer not to share. Both cases can make its missingness be NMAR.</p>
+
+<h3 id="missingness-dependency">Missingness Dependency</h3>
+
+<h4 id="rating-and-minutes">Rating and Minutes</h4>
+
+<h4 id="rating-and-n_ingredients">Rating and N_ingredients</h4>
 
 <hr />
 

@@ -134,6 +134,13 @@ In the aggregates analysis, we will study the calories content.
 
 ## Assessment of Missingness
 ### NMAR Analysis
+In the NMAR scenario, the reason behind the missing data is related to the missing data itself. In the merged dataframe, the missingness type of the `description` column is probably NMAR. For example, users might not include a description for recipes that are simple or well-known because they think it's self-explanatory, or they might omit descriptions for recipes that are family secrets or unique concoctions they prefer not to share. Both cases can make its missingness be NMAR.
+
+### Missingness Dependency
+
+#### Rating and Minutes
+
+#### Rating and N_ingredients
 
 ---
 
