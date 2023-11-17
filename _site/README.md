@@ -1,6 +1,6 @@
 # Recipes and Ratings Research Project
 
-**Author**: Xin Shu, Chang Shu
+**Authors**: Xin Shu, Chang Shu
 
 ## Project Overview
 This project aims to explore the potential correlation between the calorie content of recipes and the ratings giving by people. This is a project for DSC80 at UCSD. The dataset used to investigate this topic can be find [here](https://drive.google.com/file/d/1kIbMz6jlhleiZ9_3QthmUnifoSds_2EI/view).
@@ -78,7 +78,22 @@ minutes            int64
 dtype: object
 ```
 
-<iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
+<!-- <iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe> -->
+
+### Bivariate Analysis
+To do the Bivariate Analysis, we will use a boxplot and a scatter plot to illustrate the relationship between the calorie content of recipes and the ratings giving by people.
+
+<iframe src="assets/fig_scatter.html" width=800 height=600 frameBorder=0></iframe>
+From this visualization, it is observed that there is no strong correlation between calories and ratings. We could say that there is a weak relationship between the calorie content of recipes and the ratings giving by people.
+
+<iframe src="assets/boxplot.html" width=800 height=600 frameBorder=0></iframe>
+This box plot displays the distribution of calorie content across different recipe ratings from 1 to 5.
+
+The **median calorie content** appears relatively consistent across ratings, suggesting that the central tendency of calories is not strongly affected by how users rate the recipes.
+
+The **range and interquartile range (IQR)** of calories seem similar across ratings, indicating that there is a similar variation in calorie content regardless of the rating.
+
+Thus, from this plot, we cannot conclude anything about the relationship between the calories and ratings, as the central tendencies and spreads are similar across all rating categories.
 
 ---
 
