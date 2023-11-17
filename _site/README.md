@@ -128,7 +128,9 @@ In the aggregates analysis, we will study the calories content.
 | 4.0    | 405.047340 | 302.0  | 487.186744 | 16894.9  |
 | 5.0    | 415.213166 | 298.2  | 580.018040 | 45609.0  |
 
+<iframe src="assets/max.html" width=800 height=600 frameBorder=0></iframe>
 
+<iframe src="assets/withoutmax.html" width=800 height=600 frameBorder=0></iframe>
 ---
 
 ## Assessment of Missingness
