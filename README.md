@@ -101,7 +101,6 @@ From the histogram, we can observe the following:
 <iframe src="assets/calories.html" width=800 height=600 frameBorder=0></iframe>
 
 
-### Interesting Aggregates
 
 ---
 
