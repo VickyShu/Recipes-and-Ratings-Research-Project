@@ -100,10 +100,6 @@ From the histogram, we can observe the following:
 
 <iframe src="assets/calories.html" width=800 height=600 frameBorder=0></iframe>
 
-
-
-<!-- <iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe> -->
-
 ### Bivariate Analysis
 To do the Bivariate Analysis, we will use a boxplot and a scatter plot to illustrate the relationship between the calorie content of recipes and the ratings giving by people.
 
