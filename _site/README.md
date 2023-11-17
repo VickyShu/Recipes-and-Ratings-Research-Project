@@ -1,6 +1,6 @@
 # Recipes and Ratings Research Project
 
-**Author**: Xin Shu, Chang Shu
+**Authors**: Xin Shu, Chang Shu
 
 ## Project Overview
 This project aims to explore the potential correlation between the calorie content of recipes and the ratings giving by people. This is a project for DSC80 at UCSD. The dataset used to investigate this topic can be find [here](https://drive.google.com/file/d/1kIbMz6jlhleiZ9_3QthmUnifoSds_2EI/view).
