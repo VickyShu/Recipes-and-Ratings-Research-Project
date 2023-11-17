@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Recipes and Ratings Research Project | Recipes-and-Ratings-Research-Project</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Recipes and Ratings Research Project" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Recipes-and-Ratings-Research-Project" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Recipes and Ratings Research Project" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Recipes and Ratings Research Project","name":"Recipes-and-Ratings-Research-Project","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c23d3045604e39a8b1c5eee3794fa866937b574c">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Recipes and Ratings Research Project</h1>
+      <h2 class="project-tagline"></h2>
+      
+        <a href="https://github.com/VickyShu/Recipes-and-Ratings-Research-Project" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="recipes-and-ratings-research-project">Recipes and Ratings Research Project</h1>
+
+<p><strong>Authors</strong>: Xin Shu, Chang Shu</p>
+
+<h2 id="project-overview">Project Overview</h2>
+<p>This project aims to explore the potential correlation between the calorie content of recipes and the ratings giving by people. This is a project for DSC80 at UCSD. The dataset used to investigate this topic can be find <a href="https://drive.google.com/file/d/1kIbMz6jlhleiZ9_3QthmUnifoSds_2EI/view">here</a>.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>In the culinary world, the balance between taste and health is a subject of much interest and debate. Calorie content, a measure of energy intake, is a critical factor in this balance, directly affecting an individual’s health and well-being. High-calorie recipes are often associated with comfort and indulgence, potentially leading to higher ratings due to satisfaction and taste. In this project, we aim to examine the relationship between recipe ratings and calorie content to reveal the preferences and trends that drive our dietary habits. However, nowadays, the modern health movement encourages lower-calorie options to combat the rising tide of lifestyle-related illnesses. Thus, exploring this relationship is not just an academic exercise, which is also a way to combine culinary arts with nutritional science for a healthier society.</p>
+
+<h3 id="introduction-to-datasets">Introduction to Datasets</h3>
+<p>Our two datasets comprise detailed records from a popular cooking website, capturing the essence of what makes a recipe resonate with their audience. Within these two datasets, we are trying to answer a question: Is there a relationship between the calorie content of a recipe and its user rating?</p>
+
+<p>The “RAW_recipes” dataset consists of 83,782 rows, each row representing a unique recipe. There are ten columns in RAW_recipes. Relevant columns in this dataset include:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>‘name’</td>
+      <td>Recipe name</td>
+    </tr>
+    <tr>
+      <td>‘id’</td>
+      <td>Recipe ID</td>
+    </tr>
+    <tr>
+      <td>‘minutes’</td>
+      <td>Minutes to prepare recipe</td>
+    </tr>
+    <tr>
+      <td>‘contributor_id’</td>
+      <td>User ID who submitted this recipe</td>
+    </tr>
+    <tr>
+      <td>‘submitted’</td>
+      <td>Date recipe was submitted</td>
+    </tr>
+    <tr>
+      <td>‘tags’</td>
+      <td>Food.com tags for recipe</td>
+    </tr>
+    <tr>
+      <td>‘nutrition’</td>
+      <td>Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value”</td>
+    </tr>
+    <tr>
+      <td>‘n_steps’</td>
+      <td>Number of steps in recipe</td>
+    </tr>
+    <tr>
+      <td>‘steps’</td>
+      <td>Text for recipe steps, in order</td>
+    </tr>
+    <tr>
+      <td>‘description’</td>
+      <td>User-provided description</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The “RAW_interactions” dataset is considerably larger, with 731,927 rows. This dataset contains the following columns relevant to our question:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>‘user_id’</td>
+      <td>User ID</td>
+    </tr>
+    <tr>
+      <td>‘recipe_id’</td>
+      <td>Recipe ID</td>
+    </tr>
+    <tr>
+      <td>‘date’</td>
+      <td>Date of interaction</td>
+    </tr>
+    <tr>
+      <td>‘rating’</td>
+      <td>Rating given</td>
+    </tr>
+    <tr>
+      <td>‘review’</td>
+      <td>Review text</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For our investigation into the connection between recipe ratings and calorie content, we use some specific columns from two datasets. From the first dataset, “RAW_recipes,” we concentrated on the ‘nutrition’ column, which lists critical nutritional values such as calories, total fat, sugar, protein, saturated fat, and carbohydrates. We will separate the calorie content, creating a new column named ‘calories (#)’. This new column will be the cornerstone of our study as it provides a direct measure of the energy content in each recipe.</p>
+
+<p>We turned to the ‘rating’ column from the second dataset, “RAW_interactions”. This column provides a direct expression of user satisfaction and preference, defined as categorical values.    It is a crucial metric that reflects the collective judgment of users, which when analyzed with the calorie information, could reveal whether there’s a preference trend towards higher or lower-calorie dishes.</p>
+
+<hr />
+
+<h2 id="cleaning-and-eda">Cleaning and EDA</h2>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<p>Before conducting the analysis based on these two datasets, we follow the following steps to clean the datasets:</p>
+
+<ol>
+  <li>
+    <p><strong>Left merge the recipes and interactions datasets together:</strong> We combine the recipes and ratings datasets using a <code class="language-plaintext highlighter-rouge">left</code> merge based on <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">recipe_id</code>. This is done to ensure all recipes are included in our analysis, even if they haven’t been rated.</p>
+  </li>
+  <li>
+    <p><strong>Fill all ratings of 0 with <code class="language-plaintext highlighter-rouge">np.nan</code>:</strong> In the merged dataset, we convert all ratings of 0 to N/A. This is reasonable since the rationale that a rating of 0 could potentially represent cases where a rating was not given, rather than a deliberate rating of zero. Rating scales typically start from 1, and a 0 is often not a selectable option for users. Thus, a 0 could be replaced by N/A for missing or unreported ratings.</p>
+  </li>
+  <li>
+    <p><strong>Calculating average rating:</strong> After addressing the zero ratings and merging two datasets, we calculate the average rating for each recipe by add a new column <code class="language-plaintext highlighter-rouge">ave_rating</code>.</p>
+  </li>
+  <li>
+    <p><strong>Converting <code class="language-plaintext highlighter-rouge">nutrition</code> data from string to a list of floats and assign to individual columns:</strong> The <code class="language-plaintext highlighter-rouge">nutrition</code> column looks like a list but is actually a text string. We convert this string into a list of floats and create separate columns for each nutrient - <code class="language-plaintext highlighter-rouge">"[calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]"</code> - to make the data clear and ready for analysis.</p>
+  </li>
+</ol>
+
+<p>The cleaned dataframe is shown below (with only relevant columns).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">name</th>
+      <th style="text-align: right">id</th>
+      <th style="text-align: right">n_steps</th>
+      <th style="text-align: left">steps</th>
+      <th style="text-align: left">ingredients</th>
+      <th style="text-align: right">n_ingredients</th>
+      <th style="text-align: right">calories</th>
+      <th style="text-align: right">ratings</th>
+      <th style="text-align: right">minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1 brownies in the world best ever</td>
+      <td style="text-align: right">333281</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: left">[‘heat the oven to 350f and arrange the rack in the middle’, …]</td>
+      <td style="text-align: left">[‘bittersweet chocolate’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">138.4</td>
+      <td style="text-align: right">4.0</td>
+      <td style="text-align: right">40</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1 in canada chocolate chip cookies</td>
+      <td style="text-align: right">453467</td>
+      <td style="text-align: right">12</td>
+      <td style="text-align: left">[‘pre-heat oven the 350 degrees f’, …]</td>
+      <td style="text-align: left">[‘white sugar’, ‘brown sugar’, …]</td>
+      <td style="text-align: right">11</td>
+      <td style="text-align: right">595.1</td>
+      <td style="text-align: right">5.0</td>
+      <td style="text-align: right">45</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">412 broccoli casserole</td>
+      <td style="text-align: right">306168</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">[‘preheat oven to 350 degrees’, …]</td>
+      <td style="text-align: left">[‘frozen broccoli cuts’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">194.8</td>
+      <td style="text-align: right">5.0</td>
+      <td style="text-align: right">40</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">412 broccoli casserole</td>
+      <td style="text-align: right">306168</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">[‘preheat oven to 350 degrees’, …]</td>
+      <td style="text-align: left">[‘frozen broccoli cuts’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">194.8</td>
+      <td style="text-align: right">5.0</td>
+      <td style="text-align: right">40</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">412 broccoli casserole</td>
+      <td style="text-align: right">306168</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">[‘preheat oven to 350 degrees’, …]</td>
+      <td style="text-align: left">[‘frozen broccoli cuts’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">194.8</td>
+      <td style="text-align: right">5.0</td>
+      <td style="text-align: right">40</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The type of each columns in the cleaned dataframe is shown below:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name              object
+id                 int64
+n_steps            int64
+steps             object
+ingredients       object
+n_ingredients      int64
+calories (#)     float64
+rating           float64
+minutes            int64
+dtype: object
+</code></pre></div></div>
+<h3 id="univariate-analysis">Univariate Analysis</h3>
+<p>In the univariate analysis section, we will analyze the distribution of rating scale and the distribution of calories.</p>
+<h4 id="distribution-of-ratings-scale">Distribution of Ratings Scale</h4>
+<p>The plot displays a bar chart that illustrates the distribution of ratings on a 1-5 scale. The x-axis represents the rating scale with values from 1 to 5. The y-axis represents the count of ratings for each recipe.</p>
+
+<p>The chart shows a clear trend: the highest rating (5) has been given significantly more often than the lower ratings of 1 through 4. This could suggest a tendency for users to favor recipes with higher ratings, or it could be an indication of a positive skew in user behavior, where users are more likely to rate a recipe if they found it very satisfactory (rating of 5).</p>
+
+<iframe src="assets/rating.html" width="800" height="600" frameborder="0"></iframe>
+
+<h4 id="distribution-of-calories">Distribution of calories</h4>
+<p>The histogram shows the distribution of calories for a collection of recipes, with the data filtered to exclude the top 1% of recipes with the highest calorie content.</p>
+
+<p>From the histogram, we can observe the following:</p>
+
+<p><strong>Skewed Distribution:</strong> The distribution of calories is right-skewed, meaning there are more recipes with lower calorie content and fewer recipes with higher calorie content.</p>
+
+<p><strong>Most Common Range:</strong> The majority of the recipes appear to fall within the lower calorie range, with a steep drop-off as calorie content increases.</p>
+
+<p><strong>High-Calorie Recipes:</strong> While there are recipes with higher calorie counts, they are significantly less common, as evidenced by the long tail extending to the right of the histogram.</p>
+
+<iframe src="assets/calories.html" width="800" height="600" frameborder="0"></iframe>
+
+<h3 id="bivariate-analysis">Bivariate Analysis</h3>
+<p>To do the Bivariate Analysis, we will use a boxplot and a scatter plot to illustrate the relationship between the calorie content of recipes and the ratings giving by people.</p>
+
+<iframe src="assets/fig_scatter.html" width="800" height="600" frameborder="0"></iframe>
+<p>From this visualization, it is observed that there is no strong correlation between calories and ratings. We could say that there is a weak relationship between the calorie content of recipes and the ratings giving by people.</p>
+
+<iframe src="assets/boxplot.html" width="800" height="600" frameborder="0"></iframe>
+<p>This box plot displays the distribution of calorie content across different recipe ratings from 1 to 5.</p>
+
+<p>The <strong>median calorie content</strong> appears relatively consistent across ratings, suggesting that the central tendency of calories is not strongly affected by how users rate the recipes.</p>
+
+<p>The <strong>range and interquartile range (IQR)</strong> of calories seem similar across ratings, indicating that there is a similar variation in calorie content regardless of the rating.</p>
+
+<p>Thus, from this plot, we cannot conclude anything about the relationship between the calories and ratings, as the central tendencies and spreads are similar across all rating categories.</p>
+
+<hr />
+
+<h2 id="assessment-of-missingness">Assessment of Missingness</h2>
+
+<p>Here’s what a Markdown table looks like. Note that the code for this table was generated <em>automatically</em> from a DataFrame, using</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">counts</span><span class="p">[[</span><span class="s">'Quarter'</span><span class="p">,</span> <span class="s">'Count'</span><span class="p">]].</span><span class="n">head</span><span class="p">().</span><span class="n">to_markdown</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Quarter</th>
+      <th style="text-align: right">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Fall 2020</td>
+      <td style="text-align: right">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Winter 2021</td>
+      <td style="text-align: right">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Spring 2021</td>
+      <td style="text-align: right">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Summer 2021</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Fall 2021</td>
+      <td style="text-align: right">55</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="hypothesis-testing">Hypothesis Testing</h2>
+
+<hr />
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/VickyShu/Recipes-and-Ratings-Research-Project">Recipes-and-Ratings-Research-Project</a> is maintained by <a href="https://github.com/VickyShu">VickyShu</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
