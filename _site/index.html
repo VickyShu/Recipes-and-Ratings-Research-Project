@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=370e6292c4cdb1dc4dfed07b5651d6e222bc9c34">
+    <link rel="stylesheet" href="/assets/css/style.css?v=c23d3045604e39a8b1c5eee3794fa866937b574c">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -63,6 +63,104 @@
 <hr />
 
 <h2 id="cleaning-and-eda">Cleaning and EDA</h2>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<p>Before conducting the analysis based on these two datasets, we follow the following steps to clean the datasets:</p>
+
+<ol>
+  <li>
+    <p><strong>Left merge the recipes and interactions datasets together:</strong> We combine the recipes and ratings datasets using a <code class="language-plaintext highlighter-rouge">left</code> merge based on <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">recipe_id</code>. This is done to ensure all recipes are included in our analysis, even if they haven’t been rated.</p>
+  </li>
+  <li>
+    <p><strong>Fill all ratings of 0 with <code class="language-plaintext highlighter-rouge">np.nan</code>:</strong> In the merged dataset, we convert all ratings of 0 to N/A. This is reasonable since the rationale that a rating of 0 could potentially represent cases where a rating was not given, rather than a deliberate rating of zero. Rating scales typically start from 1, and a 0 is often not a selectable option for users. Thus, a 0 could be replaced by N/A for missing or unreported ratings.</p>
+  </li>
+  <li>
+    <p><strong>Calculating average rating:</strong> After addressing the zero ratings and merging two datasets, we calculate the average rating for each recipe by add a new column <code class="language-plaintext highlighter-rouge">ave_rating</code>.</p>
+  </li>
+  <li>
+    <p><strong>Converting <code class="language-plaintext highlighter-rouge">nutrition</code> data from string to a list of floats and assign to individual columns:</strong> The <code class="language-plaintext highlighter-rouge">nutrition</code> column looks like a list but is actually a text string. We convert this string into a list of floats and create separate columns for each nutrient - <code class="language-plaintext highlighter-rouge">"[calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]"</code> - to make the data clear and ready for analysis.</p>
+  </li>
+</ol>
+
+<p>The cleaned dataframe is shown below (with only relevant columns).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">name</th>
+      <th style="text-align: right">id</th>
+      <th style="text-align: right">n_steps</th>
+      <th style="text-align: left">steps</th>
+      <th style="text-align: left">ingredients</th>
+      <th style="text-align: right">n_ingredients</th>
+      <th style="text-align: right">calories</th>
+      <th style="text-align: right">ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1 brownies in the world    best ever</td>
+      <td style="text-align: right">333281</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: left">[‘heat the oven to 350f and arrange the rack in the middle’, …]</td>
+      <td style="text-align: left">[‘bittersweet chocolate’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">138.4</td>
+      <td style="text-align: right">4.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1 in canada chocolate chip cookies</td>
+      <td style="text-align: right">453467</td>
+      <td style="text-align: right">12</td>
+      <td style="text-align: left">[‘pre-heat oven the 350 degrees f’, …]</td>
+      <td style="text-align: left">[‘white sugar’, ‘brown sugar’, …]</td>
+      <td style="text-align: right">11</td>
+      <td style="text-align: right">595.1</td>
+      <td style="text-align: right">5.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">412 broccoli casserole</td>
+      <td style="text-align: right">306168</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">[‘preheat oven to 350 degrees’, …]</td>
+      <td style="text-align: left">[‘frozen broccoli cuts’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">194.8</td>
+      <td style="text-align: right">5.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">412 broccoli casserole</td>
+      <td style="text-align: right">306168</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">[‘preheat oven to 350 degrees’, …]</td>
+      <td style="text-align: left">[‘frozen broccoli cuts’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">194.8</td>
+      <td style="text-align: right">5.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">412 broccoli casserole</td>
+      <td style="text-align: right">306168</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">[‘preheat oven to 350 degrees’, …]</td>
+      <td style="text-align: left">[‘frozen broccoli cuts’, …]</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">194.8</td>
+      <td style="text-align: right">5.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The type of each columns in the cleaned dataframe is shown below:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name              object
+id                 int64
+n_steps            int64
+steps             object
+ingredients       object
+n_ingredients      int64
+calories (#)     float64
+rating           float64
+dtype: object
+</code></pre></div></div>
 
 <iframe src="assets/10-80-enrollment.html" width="800" height="600" frameborder="0"></iframe>
 
