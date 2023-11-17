@@ -263,13 +263,14 @@ dtype: object
 <h3 id="univariate-analysis">Univariate Analysis</h3>
 <p>In the univariate analysis section, we will analyze the distribution of rating scale and the distribution of calories.</p>
 <h4 id="distribution-of-ratings-scale">Distribution of Ratings Scale</h4>
+<iframe src="assets/rating.html" width="800" height="600" frameborder="0"></iframe>
 <p>The plot displays a bar chart that illustrates the distribution of ratings on a 1-5 scale. The x-axis represents the rating scale with values from 1 to 5. The y-axis represents the count of ratings for each recipe.</p>
 
 <p>The chart shows a clear trend: the highest rating (5) has been given significantly more often than the lower ratings of 1 through 4. This could suggest a tendency for users to favor recipes with higher ratings, or it could be an indication of a positive skew in user behavior, where users are more likely to rate a recipe if they found it very satisfactory (rating of 5).</p>
 
-<iframe src="assets/rating.html" width="800" height="600" frameborder="0"></iframe>
-
 <h4 id="distribution-of-calories">Distribution of calories</h4>
+<iframe src="assets/calories.html" width="800" height="600" frameborder="0"></iframe>
+
 <p>The histogram shows the distribution of calories for a collection of recipes, with the data filtered to exclude the top 1% of recipes with the highest calorie content.</p>
 
 <p>From the histogram, we can observe the following:</p>
@@ -280,14 +281,14 @@ dtype: object
 
 <p><strong>High-Calorie Recipes:</strong> While there are recipes with higher calorie counts, they are significantly less common, as evidenced by the long tail extending to the right of the histogram.</p>
 
-<iframe src="assets/calories.html" width="800" height="600" frameborder="0"></iframe>
-
 <h3 id="bivariate-analysis">Bivariate Analysis</h3>
 <p>To do the Bivariate Analysis, we will use a boxplot and a scatter plot to illustrate the relationship between the calorie content of recipes and the ratings giving by people.</p>
 
+<h4 id="distribution-of-scatter-plot-for-calories-and-ratings">Distribution of scatter plot for calories and ratings</h4>
 <iframe src="assets/fig_scatter.html" width="800" height="600" frameborder="0"></iframe>
 <p>From this visualization, it is observed that there is no strong correlation between calories and ratings. We could say that there is a weak relationship between the calorie content of recipes and the ratings giving by people.</p>
 
+<h4 id="distribution-of-box-plot-for-calories-and-ratings">Distribution of box plot for calories and ratings</h4>
 <iframe src="assets/boxplot.html" width="800" height="600" frameborder="0"></iframe>
 <p>This box plot displays the distribution of calorie content across different recipe ratings from 1 to 5.</p>
 
