@@ -299,46 +299,68 @@ dtype: object
 <p>Thus, from this plot, we cannot conclude anything about the relationship between the calories and ratings, as the central tendencies and spreads are similar across all rating categories.</p>
 
 <h3 id="interesting-aggregates">Interesting Aggregates</h3>
-
-<hr />
-
-<h2 id="assessment-of-missingness">Assessment of Missingness</h2>
-
-<p>Here’s what a Markdown table looks like. Note that the code for this table was generated <em>automatically</em> from a DataFrame, using</p>
-
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">counts</span><span class="p">[[</span><span class="s">'Quarter'</span><span class="p">,</span> <span class="s">'Count'</span><span class="p">]].</span><span class="n">head</span><span class="p">().</span><span class="n">to_markdown</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
-</code></pre></div></div>
+<p>In the aggregates analysis, we will study the calories content.</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: left">Quarter</th>
-      <th style="text-align: right">Count</th>
+      <th> </th>
+      <th>mean</th>
+      <th>median</th>
+      <th>std</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>rating</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">Fall 2020</td>
-      <td style="text-align: right">3</td>
+      <td>1.0</td>
+      <td>486.595401</td>
+      <td>316.0</td>
+      <td>757.480650</td>
+      <td>17551.6</td>
     </tr>
     <tr>
-      <td style="text-align: left">Winter 2021</td>
-      <td style="text-align: right">2</td>
+      <td>2.0</td>
+      <td>446.598226</td>
+      <td>326.3</td>
+      <td>526.058036</td>
+      <td>7585.0</td>
     </tr>
     <tr>
-      <td style="text-align: left">Spring 2021</td>
-      <td style="text-align: right">6</td>
+      <td>3.0</td>
+      <td>425.790714</td>
+      <td>309.6</td>
+      <td>547.385352</td>
+      <td>13101.5</td>
     </tr>
     <tr>
-      <td style="text-align: left">Summer 2021</td>
-      <td style="text-align: right">4</td>
+      <td>4.0</td>
+      <td>405.047340</td>
+      <td>302.0</td>
+      <td>487.186744</td>
+      <td>16894.9</td>
     </tr>
     <tr>
-      <td style="text-align: left">Fall 2021</td>
-      <td style="text-align: right">55</td>
+      <td>5.0</td>
+      <td>415.213166</td>
+      <td>298.2</td>
+      <td>580.018040</td>
+      <td>45609.0</td>
     </tr>
   </tbody>
 </table>
+
+<hr />
+
+<h2 id="assessment-of-missingness">Assessment of Missingness</h2>
+<h3 id="nmar-analysis">NMAR Analysis</h3>
 
 <hr />
 

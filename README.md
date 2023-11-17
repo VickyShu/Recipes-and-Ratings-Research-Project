@@ -117,6 +117,17 @@ The **range and interquartile range (IQR)** of calories seem similar across rati
 Thus, from this plot, we cannot conclude anything about the relationship between the calories and ratings, as the central tendencies and spreads are similar across all rating categories.
 
 ### Interesting Aggregates
+In the aggregates analysis, we will study the calories content.
+
+|  | mean       | median | std        | max      |
+| rating | | | | |
+|--------|------------|--------|------------|----------|
+| 1.0    | 486.595401 | 316.0  | 757.480650 | 17551.6  |
+| 2.0    | 446.598226 | 326.3  | 526.058036 | 7585.0   |
+| 3.0    | 425.790714 | 309.6  | 547.385352 | 13101.5  |
+| 4.0    | 405.047340 | 302.0  | 487.186744 | 16894.9  |
+| 5.0    | 415.213166 | 298.2  | 580.018040 | 45609.0  |
+
 
 ---
 
