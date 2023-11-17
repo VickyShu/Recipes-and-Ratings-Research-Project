@@ -102,9 +102,9 @@ From the histogram, we can observe the following:
 ### Bivariate Analysis
 To do the Bivariate Analysis, we will use a boxplot and a scatter plot to illustrate the relationship between the calorie content of recipes and the ratings giving by people.
 
-#### Distribution of scatter plot for calories and ratings
-<iframe src="assets/fig_scatter.html" width=800 height=600 frameBorder=0></iframe>
-From this visualization, it is observed that there is no strong correlation between calories and ratings. We could say that there is a weak relationship between the calorie content of recipes and the ratings giving by people.
+#### Distribution of scatter plot for calories and the number of steps
+<iframe src="assets/scatter.html" width=800 height=600 frameBorder=0></iframe>
+From this visualization, it is observed that there is no strong correlation between calories and the number of steps. We could say that there is a weak relationship between the calorie content of recipes and the number of steps.
 
 #### Distribution of box plot for calories and ratings
 <iframe src="assets/boxplot.html" width=800 height=600 frameBorder=0></iframe>
@@ -115,6 +115,8 @@ The **median calorie content** appears relatively consistent across ratings, sug
 The **range and interquartile range (IQR)** of calories seem similar across ratings, indicating that there is a similar variation in calorie content regardless of the rating.
 
 Thus, from this plot, we cannot conclude anything about the relationship between the calories and ratings, as the central tendencies and spreads are similar across all rating categories.
+
+### Interesting Aggregates
 
 ---
 
