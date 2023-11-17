@@ -77,6 +77,30 @@ rating           float64
 minutes            int64
 dtype: object
 ```
+### Univariate Analysis
+In the univariate analysis section, we will analyze the distribution of rating scale and the distribution of calories.
+#### Distribution of Ratings Scale
+The plot displays a bar chart that illustrates the distribution of ratings on a 1-5 scale. The x-axis represents the rating scale with values from 1 to 5. The y-axis represents the count of ratings for each recipe.
+
+The chart shows a clear trend: the highest rating (5) has been given significantly more often than the lower ratings of 1 through 4. This could suggest a tendency for users to favor recipes with higher ratings, or it could be an indication of a positive skew in user behavior, where users are more likely to rate a recipe if they found it very satisfactory (rating of 5).
+
+<iframe src="assets/rating.html" width=800 height=600 frameBorder=0></iframe>
+
+
+#### Distribution of calories
+The histogram shows the distribution of calories for a collection of recipes, with the data filtered to exclude the top 1% of recipes with the highest calorie content.
+
+From the histogram, we can observe the following:
+
+**Skewed Distribution:** The distribution of calories is right-skewed, meaning there are more recipes with lower calorie content and fewer recipes with higher calorie content.
+
+**Most Common Range:** The majority of the recipes appear to fall within the lower calorie range, with a steep drop-off as calorie content increases.
+
+**High-Calorie Recipes:** While there are recipes with higher calorie counts, they are significantly less common, as evidenced by the long tail extending to the right of the histogram.
+
+<iframe src="assets/calories.html" width=800 height=600 frameBorder=0></iframe>
+
+
 
 <!-- <iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe> -->
 
