@@ -119,8 +119,7 @@ Thus, from this plot, we cannot conclude anything about the relationship between
 ### Interesting Aggregates
 In the aggregates analysis, we will study the calories content.
 
-|  | mean       | median | std        | max      |
-| rating | | | | |
+| rating | mean       | median | std        | max      |
 |--------|------------|--------|------------|----------|
 | 1.0    | 486.595401 | 316.0  | 757.480650 | 17551.6  |
 | 2.0    | 446.598226 | 326.3  | 526.058036 | 7585.0   |
