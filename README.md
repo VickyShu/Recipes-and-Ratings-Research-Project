@@ -144,7 +144,7 @@ From this plot we can see that the 'max' values were disproportionately higher t
 
 <iframe src="assets/withoutmax.html" width=800 height=600 frameBorder=0></iframe>
 
-This exclusion allowed for a clearer and more meaningful comparison of these three measures across the rating scale from 1 to 5.  From the revised plot, an interesting finding emerged: while the 'mean' and 'median' values show a slight decrease as ratings increase from 1 to 4, they increase again for recipes with a rating of 5. This suggests that the highest-rated recipes do not necessarily have lower calorie content. Additionally, the 'standard deviation' remains relatively consistent across ratings, indicating a similar variability in calorie content regardless of the rating.  This nuanced view of the data underscores that user preferences for recipes, as reflected by ratings, may not be solely influenced by calorie content.
+This exclusion allowed for a clearer and more meaningful comparison of these three measures across the rating scale from 1 to 5.  From the revised plot, an interesting finding emerged: while the 'mean' and 'median' values show a slight decrease as ratings increase from 1 to 4, they increase again for recipes with a rating of 5. This suggests that the highest-rated recipes do not necessarily have lower calorie content. Additionally, the 'standard deviation' remains relatively consistent across ratings, indicating a similar variability in calorie content regardless of the rating.  This view of the data underscores that user preferences for recipes, as reflected by ratings, may not be solely influenced by calorie content.
 
 ---
 
