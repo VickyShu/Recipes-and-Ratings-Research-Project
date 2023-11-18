@@ -36,9 +36,9 @@ The "RAW_interactions" dataset is considerably larger, with 731,927 rows. This d
 | 'rating' | Rating given |
 | 'review' | Review text |
 
-For our investigation into the connection between recipe ratings and calorie content, we use some specific columns from two datasets. From the first dataset, "RAW_recipes," we concentrated on the 'nutrition' column, which lists critical nutritional values such as calories, total fat, sugar, protein, saturated fat, and carbohydrates. We will extract the calorie content, creating a new column named ‘calories (#)'. This new column will be the cornerstone of our study as it provides a direct measure of the energy content in each recipe.
+For our investigation into the connection between recipe ratings and calorie content, we use some specific columns from two datasets. From the first dataset, "RAW_recipes," we concentrated on the `nutrition` column, which lists critical nutritional values such as calories, total fat, sugar, protein, saturated fat, and carbohydrates. We will extract the calorie content, creating a new column named `calories (#)`. This new column will be the cornerstone of our study as it provides a direct measure of the energy content in each recipe.
 
-We turned to the ‘rating’ column from the second dataset, "RAW_interactions". This column could reveal whether there is a preference trend towards higher or lower-calorie dishes when analyzed with the calorie information.
+We turned to the `rating` column from the second dataset, "RAW_interactions". This column could reveal whether there is a preference trend towards higher or lower-calorie dishes when analyzed with the calorie information.
 
 ---
 
@@ -83,7 +83,7 @@ In the univariate analysis section, we will analyze the distribution of rating s
 <iframe src="assets/rating.html" width=800 height=600 frameBorder=0></iframe>
 The plot displays a bar chart that illustrates the distribution of ratings on a 1-5 scale. The x-axis represents the rating scale with values from 1 to 5. The y-axis represents the count of ratings for each recipe.
 
-The chart shows a clear trend: the highest rating (5) has been given significantly more often than the lower ratings of 1 through 4. This could suggest a tendency for users to favor recipes with higher ratings, or it could be an indication of a positive skew in user behavior, where users are more likely to rate a recipe if they found it very satisfactory (rating of 5).
+The chart shows a clear trend: the highest rating (5) has been given significantly more often than the lower ratings of 1 through 4. This could suggest that users tend to favor recipes with higher ratings, or it could indicate that there is a positive skew in user behavior, where users are more likely to rate a recipe if they found it very satisfactory (rating of 5).
 
 
 #### Distribution of calories
