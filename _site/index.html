@@ -398,7 +398,7 @@ False    103.489569
 True     154.941939
 Name: minutes, dtype: float64
 </code></pre></div></div>
-<p>We calculated the observed difference to be 51.45 (rounded to 2 decimal places). Then we conduct the permutation test, shuffle the preparation time data 1000 times, re-split it into two groups and calculate the abosulte mean. The plot below shows the empirical distribution of our permuted test statistics in 1000 permutations, the red line indicates the observed test statistics.</p>
+<p>We calculated the observed difference to be 51.45 (rounded to 2 decimal places). Then we conduct the permutation test, shuffle the preparation time data 1000 times, re-split it into two groups and calculate the absolute mean. The plot below shows the empirical distribution of our permuted test statistics in 1000 permutations, the red line indicates the observed test statistics.</p>
 <iframe src="assets/minutes_empirical.html" width="800" height="600" frameborder="0"></iframe>
 
 <p>We calculate our p-value is 0.11. Since the calculated p-value of 0.11 is greater than the significance level α of 0.05, we fail to reject the null hypothesis. This suggests that there is not enough evidence to conclude that the missingness of ratings is related to the preparation time of the recipes.</p>
@@ -439,16 +439,78 @@ From this plot and the result of our permutation test, we get a p-value of 0.0 w
 <hr />
 
 <h2 id="hypothesis-testing">Hypothesis Testing</h2>
+<p>Back to our question: examine the relationship between recipe ratings and calorie content to see if higher rating corresponds to the higher calories.<br />
+For this part, we define the recipe with a rating of 4 or 5 as “high”. The other with a rating of 1, 2, or 3 as “low” to calculate the mean of the calories content in these two levels.</p>
 
 <h3 id="permutation-test">Permutation Test</h3>
 <ul>
-  <li>Null Hypothesis:</li>
-  <li>Alternative Hypothesis:</li>
-  <li>Test Statistic:</li>
-  <li>Significance Level:</li>
+  <li><strong>Null Hypothesis:</strong> There is no difference in mean calorie content between recipes with high ratings (defined as a rating of 4 or 5) and recipes with low ratings (defined as a rating of 1, 2, or 3).</li>
+  <li><strong>Alternative Hypothesis:</strong> There is a difference in mean calorie content, and specifically that recipes with high ratings have a different mean calorie content than recipes with low ratings.</li>
+  <li><strong>Test Statistic:</strong> The test statistic is the absolute difference in the mean calorie counts between the ‘high’ rating group (ratings of 4 and 5) and the ‘low’ rating group (ratings of 1, 2, and 3).</li>
+  <li><strong>Significance Level:</strong> To ensure the accuracy of our conclusion, we decided to use a significance level of 5% as our significance level.</li>
 </ul>
 
-<p>the resulting p-value, and your conclusion</p>
+<p>Below is the table that contains some columns from our dataset. We add one more column ‘high_rating’ to our dataset, which is <code class="language-plaintext highlighter-rouge">True</code> if the rating of the recipe is 4 or 5 and <code class="language-plaintext highlighter-rouge">False</code> if the rating is 1, 2 or 3.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>id</th>
+      <th>calories (#)</th>
+      <th>rating</th>
+      <th>high_rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 brownies in the world best ever</td>
+      <td>333281</td>
+      <td>138.4</td>
+      <td>4.0</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>1 in canada chocolate chip cookies</td>
+      <td>453467</td>
+      <td>595.1</td>
+      <td>5.0</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>412 broccoli casserole</td>
+      <td>306168</td>
+      <td>194.8</td>
+      <td>5.0</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>412 broccoli casserole</td>
+      <td>306168</td>
+      <td>194.8</td>
+      <td>5.0</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>412 broccoli casserole</td>
+      <td>306168</td>
+      <td>194.8</td>
+      <td>5.0</td>
+      <td>High</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>From the plot below, we notice that the distributions of different ratings and calories content are quite similar, and we will conduct the permutation test to see the absolute difference mean within these two groups.</p>
+
+<iframe src="assets/per_calories.html" width="800" height="600" frameborder="0"></iframe>
+
+<p>We conduct the permutation test, shuffle the <code class="language-plaintext highlighter-rouge">high_rating</code> column 1000 times, re-split it into two groups and calculate the absolute mean. The plot below shows the empirical distribution of our permuted test statistics in 1000 permutations, the red line indicates the observed test statistics which is 52.51 (rounded to 2 decimal places).</p>
+<iframe src="assets/calories_empirical.html" width="800" height="600" frameborder="0"></iframe>
+<p>From the plot above and the result of our permutation test, we get a p-value of 0.0 which is significantly less than our significance level of 5%. Therefore, we reject the null hypothesis.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The permutation test shows a statistically significant difference in the mean calorie content between recipes with high ratings (ratings of 4 and 5) and those with low ratings (ratings of 1, 2, and 3). This result suggests that the calorie content of a recipe is indeed associated with its user rating. It indicates that recipes with higher ratings tend to have different calorie content compared to those with lower ratings. This finding highlights a potential preference or trend among users related to the calorie content of highly rated recipes.</p>
 
 <hr />
 
