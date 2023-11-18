@@ -100,7 +100,7 @@ From the histogram, we can observe the following:
 **High-Calorie Recipes:** While there are recipes with higher calorie counts, they are significantly less common, as evidenced by the long tail extending to the right of the histogram.
 
 ### Bivariate Analysis
-To do the Bivariate Analysis, we will use a boxplot and a scatter plot to illustrate the relationship between the calorie content of recipes and the ratings giving by people.
+To do the Bivariate Analysis, we will use a scatter plot to illustrate the relationship between the calorie content of recipes and the number of steps in recipe and use a boxplot to illustrate the relationship between the calorie content of recipes and the ratings giving by people.
 
 #### Distribution of scatter plot for calories and the number of steps
 <iframe src="assets/scatter.html" width=800 height=600 frameBorder=0></iframe>
