@@ -177,7 +177,13 @@ From this plot and the result of our permutation test, we get a p-value of 0.0 w
 ## Hypothesis Testing
 
 ### Permutation Test
+- Null Hypothesis:
+- Alternative Hypothesis:
+- Test Statistic:
+- Significance Level:
 
 
+
+the resulting p-value, and your conclusion
 
 ---
