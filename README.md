@@ -215,7 +215,7 @@ For this part, we define the recipe with a rating of 4 or 5 as “high”. The o
 ### Permutation Test
 - **Null Hypothesis:** There is no difference in mean calorie content between recipes with high ratings (defined as a rating of 4 or 5) and recipes with low ratings (defined as a rating of 1, 2, or 3).
 - **Alternative Hypothesis:** There is a difference in mean calorie content, and specifically that recipes with high ratings have a different mean calorie content than recipes with low ratings. 
-- **Test Statistic:** The test statistic is the absolute difference in the mean calorie counts between the 'high' rating group (ratings of 4 and 5) and the 'low' rating group (ratings of 1, 2, and 3).
+- **Test Statistic:** The test statistic is the absolute difference in the mean calorie counts between the `high` rating group (ratings of 4 and 5) and the `low` rating group (ratings of 1, 2, and 3).
 - **Significance Level:** To ensure the accuracy of our conclusion, we decided to use a significance level of 5% as our significance level.
 
 Below is the table that contains some columns from our dataset. We add one more column ‘high_rating’ to our dataset, which is `High` if the rating of the recipe is 4 or 5 and `Low` if the rating is 1, 2 or 3.
