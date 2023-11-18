@@ -169,12 +169,15 @@ From the histogram above, we notice their distributions are very similar. Thus w
 
 <iframe src="assets/n_ingredients_empirical.html" width=800 height=600 frameBorder=0></iframe>
 
-The above plot shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.<br>
+The above plot shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics (0.1607379066254797). <br>
 From this plot and the result of our permutation test, we get a p-value of 0.0 which is significantly less than our significance level of 5%. Therefore, we reject the null hypothesis.
 
 ---
 
 ## Hypothesis Testing
+
+### Permutation Test
+
 
 
 ---
