@@ -153,8 +153,31 @@ This exclusion allowed for a clearer and more meaningful comparison of these thr
 In the NMAR scenario, the reason behind the missing data is related to the missing data itself. In the merged dataframe, the missingness type of the `description` column is probably NMAR. For example, users might not include a description for recipes that are simple or well-known because they think it's self-explanatory, or they might omit descriptions for recipes that are family secrets or unique concoctions they prefer not to share. Both cases can make its missingness be NMAR.
 
 ### Missingness Dependency
+To better understand the missingness dependency, we will focus on the `rating` column of our merged DataFrame, we would like to investigate whether the missingness is dependent on other variables.  Specifically, we will conduct permutation tests on the `minutes` (time to prepare a recipe) and `n_ingredients` (number of ingredients in a recipe) columns to test for any dependency between these factors and the likelihood of a recipe being rated.
 
 #### Rating and Minutes
+- **Null Hypothesis:** The missingness of ratings is independent of the preparation time of the recipes. This means that the length of time to prepare a recipe does not affect whether a rating is missing or not.
+
+- **Alternative Hypothesis**: The missingness of ratings depends on the preparation time of the recipes. This implies that the time to prepare a recipe does affect the likelihood of a rating being missing.
+
+**Test Statistic:** The test statistic will be the absolute difference in mean minutes between the group of recipes with ratings and the group without ratings.
+
+<iframe src="assets/minutes.html" width=800 height=600 frameBorder=0></iframe>
+
+From the above plot, we notice that the distributions of minutes with ratings and minutes without ratings are quite similar, and we will conduct the permutation test to see the absolute difference mean within these two groups.
+
+```
+missing
+False    103.489569
+True     154.941939
+Name: minutes, dtype: float64
+```
+We calculated the observed difference to be 51.45 (rounded to 2 decimal places). Then we conduct the permutation test, shuffle the preparation time data 1000 times, re-split it into two groups and calculate the abosulte mean. The plot below shows the empirical distribution of our permuted test statistics in 1000 permutations, the red line indicates the observed test statistics.
+<iframe src="assets/minutes_empirical.html" width=800 height=600 frameBorder=0></iframe>
+
+We calculate our p-value is 0.11. Since the calculated p-value of 0.11 is greater than the significance level α of 0.05, we fail to reject the null hypothesis. This suggests that there is not enough evidence to conclude that the missingness of ratings is related to the preparation time of the recipes. 
+
+**Therefore, we conclude that the missingness of ratings is independent of the preparation time based on our current analysis.**
 
 #### Rating and N_ingredients (MAR)
 - Null Hypothesis: The missingness of rating does not depend on the number of ingredients.
