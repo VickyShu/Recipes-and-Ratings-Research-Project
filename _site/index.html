@@ -301,6 +301,16 @@ dtype: object
 <h3 id="interesting-aggregates">Interesting Aggregates</h3>
 <p>In the aggregates analysis, we will study the calories content.</p>
 
+<p>The pivot table summarizes the calorie content of recipes by their user ratings. Each row corresponds to a rating value, with the following statistical measures:</p>
+
+<p><strong>Mean:</strong> The average calorie content for recipes with that rating.</p>
+
+<p><strong>Median:</strong> The middle value in the range of calorie contents for recipes with that rating.</p>
+
+<p><strong>Standard Deviation (std):</strong> A measure of the variation of the calorie amounts from the mean for recipes with that rating.</p>
+
+<p><strong>Maximum (max):</strong> The highest calorie content found in recipes for each rating category.</p>
+
 <table>
   <thead>
     <tr>
@@ -350,9 +360,14 @@ dtype: object
   </tbody>
 </table>
 
+<p>Below is the plot for the pivot table.</p>
 <iframe src="assets/max.html" width="800" height="600" frameborder="0"></iframe>
+<p>From this plot we can see that the ‘max’ values were disproportionately higher than the other statistics. It skewed the visual representation, making it challenging to observe the trends and patterns of the other variables. To address this, the ‘max’ variable was excluded in the next plot to focus on the ‘mean’, ‘median’, and ‘std’ variables.</p>
 
 <iframe src="assets/withoutmax.html" width="800" height="600" frameborder="0"></iframe>
+
+<p>This exclusion allowed for a clearer and more meaningful comparison of these three measures across the rating scale from 1 to 5.  From the revised plot, an interesting finding emerged: while the ‘mean’ and ‘median’ values show a slight decrease as ratings increase from 1 to 4, they increase again for recipes with a rating of 5. This suggests that the highest-rated recipes do not necessarily have lower calorie content. Additionally, the ‘standard deviation’ remains relatively consistent across ratings, indicating a similar variability in calorie content regardless of the rating.  This nuanced view of the data underscores that user preferences for recipes, as reflected by ratings, may not be solely influenced by calorie content.</p>
+
 <hr />
 
 <h2 id="assessment-of-missingness">Assessment of Missingness</h2>

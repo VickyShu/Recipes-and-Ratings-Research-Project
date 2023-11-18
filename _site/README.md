@@ -119,6 +119,17 @@ Thus, from this plot, we cannot conclude anything about the relationship between
 ### Interesting Aggregates
 In the aggregates analysis, we will study the calories content.
 
+The pivot table summarizes the calorie content of recipes by their user ratings. Each row corresponds to a rating value, with the following statistical measures:
+
+**Mean:** The average calorie content for recipes with that rating.
+
+**Median:** The middle value in the range of calorie contents for recipes with that rating.
+
+**Standard Deviation (std):** A measure of the variation of the calorie amounts from the mean for recipes with that rating.
+
+**Maximum (max):** The highest calorie content found in recipes for each rating category.
+
+
 | rating | mean       | median | std        | max      |
 |--------|------------|--------|------------|----------|
 | 1.0    | 486.595401 | 316.0  | 757.480650 | 17551.6  |
@@ -127,9 +138,14 @@ In the aggregates analysis, we will study the calories content.
 | 4.0    | 405.047340 | 302.0  | 487.186744 | 16894.9  |
 | 5.0    | 415.213166 | 298.2  | 580.018040 | 45609.0  |
 
+Below is the plot for the pivot table.
 <iframe src="assets/max.html" width=800 height=600 frameBorder=0></iframe>
+From this plot we can see that the 'max' values were disproportionately higher than the other statistics. It skewed the visual representation, making it challenging to observe the trends and patterns of the other variables. To address this, the 'max' variable was excluded in the next plot to focus on the 'mean', 'median', and 'std' variables.
 
 <iframe src="assets/withoutmax.html" width=800 height=600 frameBorder=0></iframe>
+
+This exclusion allowed for a clearer and more meaningful comparison of these three measures across the rating scale from 1 to 5.  From the revised plot, an interesting finding emerged: while the 'mean' and 'median' values show a slight decrease as ratings increase from 1 to 4, they increase again for recipes with a rating of 5. This suggests that the highest-rated recipes do not necessarily have lower calorie content. Additionally, the 'standard deviation' remains relatively consistent across ratings, indicating a similar variability in calorie content regardless of the rating.  This nuanced view of the data underscores that user preferences for recipes, as reflected by ratings, may not be solely influenced by calorie content.
+
 ---
 
 ## Assessment of Missingness
