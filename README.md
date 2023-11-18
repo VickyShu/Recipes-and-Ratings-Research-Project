@@ -156,7 +156,21 @@ In the NMAR scenario, the reason behind the missing data is related to the missi
 
 #### Rating and Minutes
 
-#### Rating and N_ingredients
+#### Rating and N_ingredients (MAR)
+- Null Hypothesis: The missingness of rating does not depend on the number of ingredients.
+
+- Alternative Hypothesis: The missingness of rating depends on the number of ingredients.
+
+Similarly, we want to know whether there is a significant difference in the mean number of ingredients (n_ingredients) for recipes with the missingness of rating. We calculate the absolute difference in mean number of ingredients between two groups defined by the 'missing' column.
+
+<iframe src="assets/n_ingredients.html" width=800 height=600 frameBorder=0></iframe>
+
+From the histogram above, we notice their distributions are very similar. Thus we will conduct a permutation test with mean as test statistic.
+
+<iframe src="assets/n_ingredients_empirical.html" width=800 height=600 frameBorder=0></iframe>
+
+The above plot shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.<br>
+From this plot and the result of our permutation test, we get a p-value of 0.0 which is significantly less than our significance level of 5%. Therefore, we reject the null hypothesis.
 
 ---
 
