@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=c23d3045604e39a8b1c5eee3794fa866937b574c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=22f3688d94f2f858bcc744aa90792c6c771d9497">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -375,24 +375,61 @@ dtype: object
 <p>In the NMAR scenario, the reason behind the missing data is related to the missing data itself. In the merged dataframe, the missingness type of the <code class="language-plaintext highlighter-rouge">description</code> column is probably NMAR. For example, users might not include a description for recipes that are simple or well-known because they think it’s self-explanatory, or they might omit descriptions for recipes that are family secrets or unique concoctions they prefer not to share. Both cases can make its missingness be NMAR.</p>
 
 <h3 id="missingness-dependency">Missingness Dependency</h3>
+<p>To better understand the missingness dependency, we will focus on the <code class="language-plaintext highlighter-rouge">rating</code> column of our merged DataFrame, we would like to investigate whether the missingness is dependent on other variables.  Specifically, we will conduct permutation tests on the <code class="language-plaintext highlighter-rouge">minutes</code> (time to prepare a recipe) and <code class="language-plaintext highlighter-rouge">n_ingredients</code> (number of ingredients in a recipe) columns to test for any dependency between these factors and the likelihood of a recipe being rated.</p>
 
 <h4 id="rating-and-minutes">Rating and Minutes</h4>
-
-<h4 id="rating-and-n_ingredients-mar">Rating and N_ingredients (MAR)</h4>
 <ul>
   <li>
-    <p>Null Hypothesis: The missingness of rating does not depend on the number of ingredients.</p>
+    <p><strong>Null Hypothesis:</strong> The missingness of ratings is independent of the preparation time of the recipes. This means that the length of time to prepare a recipe does not affect whether a rating is missing or not.</p>
   </li>
   <li>
-    <p>Alternative Hypothesis: The missingness of rating depends on the number of ingredients.</p>
+    <p><strong>Alternative Hypothesis</strong>: The missingness of ratings depends on the preparation time of the recipes. This implies that the time to prepare a recipe does affect the likelihood of a rating being missing.</p>
   </li>
 </ul>
 
-<p>Similarly, we want to know whether there is a significant difference in the mean number of ingredients (n_ingredients) for recipes with the missingness of rating. We calculate the absolute difference in mean number of ingredients between two groups defined by the ‘missing’ column.</p>
+<p><strong>Test Statistic:</strong> The test statistic will be the absolute difference in mean minutes between the group of recipes with ratings and the group without ratings.</p>
+
+<iframe src="assets/minutes.html" width="800" height="600" frameborder="0"></iframe>
+
+<p>From the above plot, we notice that the distributions of minutes with ratings and minutes without ratings are quite similar, and we will conduct the permutation test to see the absolute difference mean within these two groups.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>missing
+False    103.489569
+True     154.941939
+Name: minutes, dtype: float64
+</code></pre></div></div>
+<p>We calculated the observed difference to be 51.45 (rounded to 2 decimal places). Then we conduct the permutation test, shuffle the preparation time data 1000 times, re-split it into two groups and calculate the abosulte mean. The plot below shows the empirical distribution of our permuted test statistics in 1000 permutations, the red line indicates the observed test statistics.</p>
+<iframe src="assets/minutes_empirical.html" width="800" height="600" frameborder="0"></iframe>
+
+<p>We calculate our p-value is 0.11. Since the calculated p-value of 0.11 is greater than the significance level α of 0.05, we fail to reject the null hypothesis. This suggests that there is not enough evidence to conclude that the missingness of ratings is related to the preparation time of the recipes.</p>
+
+<p><strong>Therefore, we conclude that the missingness of ratings is independent of the preparation time based on our current analysis.</strong></p>
+
+<h4 id="rating-and-n_ingredients-mar">Rating and N_ingredients (MAR)</h4>
+
+<p>Similarly, we want to know whether there is a significant difference in the mean number of ingredients (n_ingredients) for recipes with the missingness of rating.</p>
+<ul>
+  <li>
+    <p><strong>Null Hypothesis:</strong> The missingness of rating does not depend on the number of ingredients.</p>
+  </li>
+  <li>
+    <p><strong>Alternative Hypothesis:</strong> The missingness of rating depends on the number of ingredients.</p>
+  </li>
+</ul>
+
+<p><strong>Test Statistic:</strong> The test statistic will be the absolute difference in mean number of ingredients (n_ingredients) between the group of recipes with ratings and the group without ratings.</p>
 
 <iframe src="assets/n_ingredients.html" width="800" height="600" frameborder="0"></iframe>
 
-<p>From the histogram above, we notice their distributions are very similar. Thus we will conduct a permutation test with mean as test statistic.</p>
+<p>From the histogram above, we notice their distributions of the number of ingredients with ratings and that of without ratings are very similar.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>missing
+False    9.061196
+True     9.221934
+Name: n_ingredients, dtype: float64
+</code></pre></div></div>
+
+<p>We calculated the observed difference to be 0.16 (rounded to 2 decimal places). Then we conduct the permutation test, shuffle the number of ingredients data 1000 times, re-split it into two groups and calculate the abosulte mean.</p>
 
 <iframe src="assets/n_ingredients_empirical.html" width="800" height="600" frameborder="0"></iframe>
 

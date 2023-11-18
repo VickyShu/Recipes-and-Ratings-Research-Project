@@ -180,15 +180,26 @@ We calculate our p-value is 0.11. Since the calculated p-value of 0.11 is greate
 **Therefore, we conclude that the missingness of ratings is independent of the preparation time based on our current analysis.**
 
 #### Rating and N_ingredients (MAR)
-- Null Hypothesis: The missingness of rating does not depend on the number of ingredients.
 
-- Alternative Hypothesis: The missingness of rating depends on the number of ingredients.
+Similarly, we want to know whether there is a significant difference in the mean number of ingredients (n_ingredients) for recipes with the missingness of rating.
+- **Null Hypothesis:** The missingness of rating does not depend on the number of ingredients.
 
-Similarly, we want to know whether there is a significant difference in the mean number of ingredients (n_ingredients) for recipes with the missingness of rating. We calculate the absolute difference in mean number of ingredients between two groups defined by the 'missing' column.
+- **Alternative Hypothesis:** The missingness of rating depends on the number of ingredients.
+
+**Test Statistic:** The test statistic will be the absolute difference in mean number of ingredients (n_ingredients) between the group of recipes with ratings and the group without ratings.
 
 <iframe src="assets/n_ingredients.html" width=800 height=600 frameBorder=0></iframe>
 
-From the histogram above, we notice their distributions are very similar. Thus we will conduct a permutation test with mean as test statistic.
+From the histogram above, we notice their distributions of the number of ingredients with ratings and that of without ratings are very similar.
+
+```
+missing
+False    9.061196
+True     9.221934
+Name: n_ingredients, dtype: float64
+```
+
+We calculated the observed difference to be 0.16 (rounded to 2 decimal places). Then we conduct the permutation test, shuffle the number of ingredients data 1000 times, re-split it into two groups and calculate the abosulte mean.
 
 <iframe src="assets/n_ingredients_empirical.html" width=800 height=600 frameBorder=0></iframe>
 
