@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=22f3688d94f2f858bcc744aa90792c6c771d9497">
+    <link rel="stylesheet" href="/assets/css/style.css?v=35d3ddb934d3be6b7346c1b76d71bb93070a8f31">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -160,7 +160,7 @@
 
 <ol>
   <li>
-    <p><strong>Left merge the recipes and interactions datasets together:</strong> We combine the recipes and ratings datasets using a <code class="language-plaintext highlighter-rouge">left</code> merge based on <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">recipe_id</code>. This is done to ensure all recipes are included in our analysis, even if they haven’t been rated.</p>
+    <p><strong>Left merge the recipes and interactions datasets together:</strong> We combine the recipes and ratings datasets using a <code class="language-plaintext highlighter-rouge">left</code> merge based on <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">recipe_id</code>. This is done to ensure all recipes are included in our analysis.</p>
   </li>
   <li>
     <p><strong>Fill all ratings of 0 with <code class="language-plaintext highlighter-rouge">np.nan</code>:</strong> In the merged dataset, we convert all ratings of 0 to N/A. This is reasonable since the rationale that a rating of 0 could potentially represent cases where a rating was not given, rather than a deliberate rating of zero. Rating scales typically start from 1, and a 0 is often not a selectable option for users. Thus, a 0 could be replaced by N/A for missing or unreported ratings.</p>
