@@ -36,9 +36,9 @@ The "RAW_interactions" dataset is considerably larger, with 731,927 rows. This d
 | 'rating' | Rating given |
 | 'review' | Review text |
 
-For our investigation into the connection between recipe ratings and calorie content, we use some specific columns from two datasets. From the first dataset, "RAW_recipes," we concentrated on the 'nutrition' column, which lists critical nutritional values such as calories, total fat, sugar, protein, saturated fat, and carbohydrates. We will separate the calorie content, creating a new column named ‘calories (#)'. This new column will be the cornerstone of our study as it provides a direct measure of the energy content in each recipe.
+For our investigation into the connection between recipe ratings and calorie content, we use some specific columns from two datasets. From the first dataset, "RAW_recipes," we concentrated on the 'nutrition' column, which lists critical nutritional values such as calories, total fat, sugar, protein, saturated fat, and carbohydrates. We will extract the calorie content, creating a new column named ‘calories (#)'. This new column will be the cornerstone of our study as it provides a direct measure of the energy content in each recipe.
 
-We turned to the ‘rating’ column from the second dataset, "RAW_interactions". This column provides a direct expression of user satisfaction and preference, defined as categorical values.    It is a crucial metric that reflects the collective judgment of users, which when analyzed with the calorie information, could reveal whether there's a preference trend towards higher or lower-calorie dishes.
+We turned to the ‘rating’ column from the second dataset, "RAW_interactions". This column could reveal whether there is a preference trend towards higher or lower-calorie dishes when analyzed with the calorie information.
 
 ---
 
